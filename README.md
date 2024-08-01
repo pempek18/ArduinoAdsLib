@@ -1,5 +1,7 @@
-# Simple ESP library for Beckhoff ADS
-
+# Simple Arduino library for Beckhoff ADS
+## Compiled for Controllino Mega with Ethernet adapter
+## Acknowledgements
+  * I would like to express my gratitude to Otti (https://github.com/otti/EspAdsLib) who provide ads example working on esp.
 ## Features
 * Base functions
   * Ads Read
