@@ -1,10 +1,9 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-// #include <string.h>
 #include <stdio.h>
 
-#include "EspAdsLib.h"
+#include "ArduinoAdsLib.h"
 
 // Constructor
 ADS::AmsAddr::AmsAddr(char* NetId, uint16_t u16Port)
