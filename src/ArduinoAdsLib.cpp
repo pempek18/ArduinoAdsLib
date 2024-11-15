@@ -180,7 +180,7 @@ void ADS::Ads::SetAddr(AmsAddr* SrcAddr, AmsAddr* DestAddr, char* DestIp)
 {
     this->pAmsSrcAddr = SrcAddr;
     this->pAmsDestAddr = DestAddr;
-    strncpy(this->DestIp, DestIp, sizeof(this->DestIp) - 1); // Minus terminating zero  
+    strncpy(this->DestIp, DestIp, sizeof(this->DestIp) - 1); // Minus terminating zero
 }
 
 bool ADS::Ads::Connect(void)
@@ -243,7 +243,7 @@ uint32_t ADS::Ads::Write(uint32_t u32IdxGrp, uint32_t u32IdxOffset, size_t WrLen
     unsigned long timeout = millis();
     while (this->client.available() == 0)
     {
-        if (millis() - timeout > 5000)
+        if (millis() - timeout > TIMEOUT)
         {
             ADS_DEBUG_PRINTLN(">>> AdsWrite: Client Timeout !");
             ADS_DEBUG_PRINTLN(">>> Check your ADS router settings and your SrcNetId and DestNetId");
@@ -291,7 +291,7 @@ uint32_t ADS::Ads::Read(uint32_t u32IdxGrp, uint32_t u32IdxOffset, size_t RdLen,
     unsigned long timeout = millis();
     while (client.available() == 0)
     {
-        if (millis() - timeout > 5000)
+        if (millis() - timeout > TIMEOUT)
         {
             ADS_DEBUG_PRINTLN(">>>AdsRead:  Client Timeout !");
             ADS_DEBUG_PRINTLN(">>> Check your ADS router settings and your SrcNetId and DestNetId");
@@ -343,7 +343,7 @@ uint32_t ADS::Ads::ReadWrite(uint32_t u32IdxGrp, uint32_t u32IdxOffset, size_t R
     unsigned long timeout = millis();
     while (client.available() == 0)
     {
-        if (millis() - timeout > 5000)
+        if (millis() - timeout > TIMEOUT)
         {
             ADS_DEBUG_PRINTLN(">>> AdsReadWrite: Client Timeout !");
             ADS_DEBUG_PRINTLN(">>> Check your ADS router settings and your SrcNetId and DestNetId");

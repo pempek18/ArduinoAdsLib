@@ -34,6 +34,8 @@
     #define ADS_DEBUG_PRINTLN(s) ;
 #endif
 
+#define TIMEOUT 10  // this should be 2 x 10ms of a timeout per request
+
 namespace ADS
 {
 
