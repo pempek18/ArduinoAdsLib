@@ -34,7 +34,13 @@
     #define ADS_DEBUG_PRINTLN(s) ;
 #endif
 
-#define TIMEOUT 10  // this should be 2 x 10ms of a timeout per request
+/**
+ * @note This library has blocking loops!
+ * By default timeout is 5000 ms
+ */
+#ifndef ADS_TIMEOUT
+  #define ADS_TIMEOUT 5000
+#endif
 
 namespace ADS
 {
